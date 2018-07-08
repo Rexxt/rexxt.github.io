@@ -1,2 +1,2 @@
-# rexxt-template
-Template for Rexxt
+# https://rexxt.github.io
+My website
