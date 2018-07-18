@@ -62,8 +62,6 @@
 .project-card {
   display: inline-block !important;
   margin: 20px;
-  min-width: auto;
-  max-width: 330px;
 }
 #contact {
   color: #FFFFFF;
