@@ -1,5 +1,5 @@
 .layout-transparent {
-  background: url('https://raw.githubusercontent.com/locness3/images-host/master/ahmed-saffu-420396-unsplash.jpg') center / cover;
+  background: url('background.jpg') center / cover;
 }
 .layout-transparent .mdl-layout__header,
 .layout-transparent .mdl-layout__drawer-button {
