@@ -1,20 +1,22 @@
 .layout-transparent {
   background: url('background.jpg') center / cover;
 }
+
 .layout-transparent .mdl-layout__header,
 .layout-transparent .mdl-layout__drawer-button {
-  /* This background is dark, so we set text to white. Use 87% black instead if
-     your background is light. */
   color: white;
 }
+
 .mdl-layout__content {
   padding: 0;
   width: 100vw;
 }
+
 .mdl-navigation__link span {
   color: #FFFFFF;
 }
-.title {
+
+.site-title {
   text-align: center;
   color: #FFFFFF;
   margin-top: 100px;
@@ -22,60 +24,73 @@
   font-size: 80px;
   font-weight: 900;
 }
+
 .section {
   padding: 0px;
   text-align: center;
 }
-.section-content,.section-header {
+
+.section-content, .section-header {
   padding: 20px;
 }
-.section-title h3{
+
+.section-title h3 {
   font-weight: bold;
 }
+
 #about {
   background-color: #FFFFFF;
 }
+
 #projects {
   background-color: #8692a5;
   color: #FFFFFF;
 }
 
-#project1 > .mdl-card__title{
-  background:
-    url("https://images.pexels.com/photos/1208020/pexels-photo-1208020.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
-  color: #FFFFFF;
-}
-#project2 > .mdl-card__title{
-  background:
-    url("https://images.pexels.com/photos/1208091/pexels-photo-1208091.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
-  color: #FFFFFF;
-}
-#project3 > .mdl-card__title{
-  background:
-    url("https://images.pexels.com/photos/1207093/pexels-photo-1207093.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
-}
-.mdl-card__title {
-  height: 220px;
-  background-postion: center !important;
-  background-size: 100% !important;
-}
 .project-card {
   display: inline-block !important;
   margin: 20px;
 }
+
+.project-card .mdl-card__title {
+  height: 220px;
+  background-position: center !important;
+  background-size: 100% !important;
+}
+
+#project1 > .mdl-card__title {
+  background:
+    url("https://images.pexels.com/photos/1208020/pexels-photo-1208020.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  color: #FFFFFF;
+}
+
+#project2 > .mdl-card__title {
+  background:
+    url("https://images.pexels.com/photos/1208091/pexels-photo-1208091.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  color: #FFFFFF;
+}
+
+#project3 > .mdl-card__title {
+  background:
+    url("https://images.pexels.com/photos/1207093/pexels-photo-1207093.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+}
+
 #contact {
   color: #FFFFFF;
   background-color: #314968;
 }
+
 .mail-button {
   text-decoration: none;
 }
+
 .footer {
   background-color: #2d2d2d;
   color: #ffffff;
   text-align: center;
   padding: 5px;
 }
+
 @media only screen and (max-width: 838px) {
   .project-card {
     margin-left: auto;
