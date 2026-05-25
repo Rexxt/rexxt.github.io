@@ -1,0 +1,5 @@
+<ul class="postlist">
+    {% for post in posts %}
+    <li><a href="/weblog/{{ post[0] }}"><span>{{ post[1] }}</span><time datetime="{{ post[2] }}" itemprop="datePublished">{{ post[3] }}</time></a></li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,5 @@
+<nav>
+    <ul>{% for page in pages %}
+        <li><a href="/{{ page[0] }}" {{ "class=\"selected\"" if page == selected }}>{{ page[1] }}</a></li>{% endfor %}
+    </ul>
+</nav>

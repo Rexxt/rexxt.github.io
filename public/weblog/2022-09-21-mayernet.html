@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mizu: mayernet</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <img src="/img/logo-small.png" alt="Mizu logo">
+            <p class="subtitle">thingdoer of the internet</p>
+        </div>
+        <div class="socials">
+            <a href="https://discord.gg/AADZUmgsph" target="_blank"><img src="/img/Discord.png" alt="Discord (Cambridge, The Open-Source Arcade Stacker)"></a>
+            <a href="https://twitter.com/Mizu_Teto" target="_blank"><img src="/img/Twitter.png" alt="Twitter"></a>
+            <a href="https://www.reddit.com/u/MizuOfficial" target="_blank"><img src="/img/Reddit.png" alt="Reddit"></a>
+            <a href="https://github.com/Rexxt" target="_blank"><img src="/img/Github.png" alt="GitHub"></a>
+            <a href="https://www.youtube.com/channel/UCK3fIE6e1NAoLfgreA0nIyg" target="_blank"><img src="/img/Youtube.png" alt="YouTube"></a>
+        </div>
+    </header>
+
+    <nav>
+    <ul>
+        <li><a href="/index.html" >Home</a></li>
+        <li><a href="/projects-content.html" >Projects & content</a></li>
+        <li><a href="/weblog/index.html" >Weblog</a></li>
+    </ul>
+</nav>
+
+    <main>
+        <h1>mayernet</h1>
+        <time datetime="2024-12-25" itemprop="datePublished">25/12/2024</time>
+
+<p>you read it, it's basically like the web, except it's piss simple, only has one request type, and is really easy to implement (assuming you are using Mayernet 1, without encryption)</p>
+<p>Mayernet uses <code>json</code> to transmit metadata and <code>markdown</code> as markup language of choice. this makes it very easy to render documents</p>
+<p>it's an extremely simple and light protocol so it's really piss easy to implement; it has an extremely simple format. it uses newlines to separate fields such as in the client-&gt;server request (URL + newline + BODY)</p>
+<p>it's made to be extremely quick to grasp and understand, even as a human user looking through TCP socket conversations (though i'll have to admit it's kind of a problem: it's not only easy to parse for clients, it also is for snitches!)</p>
+<p>so yeah Mayernet 1 does not include encryption yet, but you may propose a way to implement encryption in the protocol.</p>
+<p>```
+--- standard
+When setting up a Mayernet server, try to use port 2022.</p>
+<p>--- non-secure version, Mayernet 1, most simple to implement
+CLIENT opens connection
+SERVER accepts connection
+CLIENT sends request (url and body)
+SERVER sends response header and terminates under error conditions
+CLIENT sends acknowledgement
+SERVER sends response body
+SERVER closes connection</p>
+<p>-- request:
+A request is formatted like this:
+URL<newline>JSONBODY</p>
+<p>URL is an absolute URL, which lets us host multiple websites on the same IP address.
+JSONBODY is optional, it represents data to send to the server.</p>
+<p>-- response:
+- header:
+A response header is formatted like this:
+STATUS<newline>META</p>
+<p>STATUS is a string made of one letter and one digit and indicates how the client should behave.
+META is additional data for the client to parse (e.g. : an input prompt if status is i0)</p>
+<ul>
+<li>statuses:
+iX: input - the client should ask for a line of input and resubmit the request to the server with the "input" property in the body. META should be the prompt.
+sX: success - request handled successfully, META should be the MIME type of the response body.
+rX: redirect - the server redirects the client to a new location to browse. META should be the new location.
+fX: temp failure - the request has failed for now. META can be additional information about the error that should be displayed to the user.
+FX: perm failure - the request has failed and will fail in the future. META ^
+```</li>
+</ul>
+    </main>
+
+    <footer>
+        made with &lt;3 by eris in 2026.
+        <a href="https://github.com/rexxt/rexxt.github.io">peek through this website's source code!</a>
+    </footer>
+</body>
+</html>
