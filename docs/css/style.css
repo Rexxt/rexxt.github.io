@@ -5,6 +5,7 @@ header { grid-area: h; }
 nav { grid-area: n; }
 main { grid-area: m; }
 footer { grid-area: f; }
+
 html { margin: 0; }
 
 :root {
